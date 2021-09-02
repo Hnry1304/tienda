@@ -1,5 +1,5 @@
 <?php
-
+    require_once 'Models/Login/ValidarUsuario.php';
     class LoginController{
 
         public function vistaLogin(){
@@ -14,8 +14,20 @@
             //LIMPIAREMOS LOS DATOS DE CARACTERES ESPECIALES
             require_once 'Validations/login_validate.php';
             
-    
-            echo $username . "</br>";
-            echo $contrasena. "</br>";
+            
+            $validacion = new ValidarUsuario();
+
+            $validacion->setUserName($username);
+            $validacion->setContrasena($contrasena);
+
+            $valor = $validacion->comprobarUsuario();
+
+            if($valor){
+                header('Location: index.php?class=Crud&function=vistaCrud');
+            }else{
+                header('Location: index.php?class=Login&function=vistaLogin');
+
+            }
+
         }
     }
