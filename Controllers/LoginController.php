@@ -10,8 +10,12 @@
             if(!isset($_POST['submit'])){
                 header('Location: index.php?class=Login&function=vistaLogin');
             }
+            //ENVIAMOS LOS DATOS POST A LA SIGUIENTE URL, 
+            //LIMPIAREMOS LOS DATOS DE CARACTERES ESPECIALES
+            require_once 'Validations/login_validate.php';
             
-            var_dump($_POST);
-
+    
+            echo $username . "</br>";
+            echo $contrasena. "</br>";
         }
     }
