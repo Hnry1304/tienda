@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="#" method="post">
+        <form action="?class=Login&function=checkUser" method="post">
             <label for="Username">
                 Username:
                 <input type="text" name="username">
@@ -19,7 +19,7 @@
                 <input type="text" name="contrasena">
             </label>
 
-            <input type="text" name="submit" value="Login">
+            <input type="submit" name="submit" value="Login">
         </form>
     </div>
 </body>
