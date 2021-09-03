@@ -23,6 +23,8 @@
             $valor = $validacion->comprobarUsuario();
 
             if($valor){
+                $_SESSION['usuario'] = $username;
+                
                 header('Location: index.php?class=Crud&function=vistaCrud');
             }else{
                 header('Location: index.php?class=Login&function=vistaLogin');
