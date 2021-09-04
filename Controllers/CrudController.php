@@ -49,4 +49,51 @@
 
             header('Location: index.php?class=Crud&function=addStudent');
         }
+
+        public function Delete(){
+            $id = $_GET['id'];
+            if(!isset($id)){
+                header('Location: index.php?class=Crud&function=addStudent');
+
+            }else{
+                //Agregar Comprobacion si existe el alumno en la base de datos....
+                $delete = new AgregarAlumno();
+                $delete->setId($id);
+                
+                $delete->eliminar_alumno();
+                header('Location: index.php?class=Crud&function=vistaCrud');
+
+            }
+        }
+
+        public function vistaUpdate(){
+            $id =$_GET['id'];
+            if(!isset($id)){
+                header('Location: index.php?class=Crud&function=vistaCrud');
+            }
+
+            $_SESSION['id'] = $id;
+            require_once('Views/Crud/vistaActualizar.php');
+        }
+
+        public function Update(){
+            $id = $_SESSION['id'];
+            
+            require_once 'Validations/update_validate.php';
+
+            $actualizar_alumno = new AgregarAlumno();
+            
+            $actualizar_alumno->setId($id);
+            $actualizar_alumno->setNombre($nombre);
+            $actualizar_alumno->setApellidos($lastName);
+            $actualizar_alumno->setEdad($edad);
+            $actualizar_alumno->setSexo($sex);
+            $actualizar_alumno->setFechaNacimiento($fecha_nacimiento);
+
+            $actualizar_alumno->update_alumno();
+            header('Location: index.php?class=Crud&function=vistaCrud');
+
+        }
+
+
     }

@@ -21,8 +21,8 @@
             <div class="sexo"><?= $datos['SEX'];?></div>
             <div class="fecha_nacimiento"><?= $datos['FECHA_NACIMIENTO'];?></div>
             <div class="opcion">
-                <a href="#">Actualizar </a>
-                <a href="#">Eliminar</a>
+                <a href="?class=Crud&function=vistaUpdate&id=<?= $datos['ID'] ?>">Actualizar </a>
+                <a href="?class=Crud&function=Delete&id=<?= $datos['ID'] ?>">Eliminar</a>
             </div>
             
         </div>
