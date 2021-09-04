@@ -1,7 +1,7 @@
 <?php
-    require_once 'Models/Alumnos/DatosAlumno.php';
+    require_once 'Models/Alumnos/CrudAlumno.php';
     require_once 'Models/Paginations/PaginacionModel.php';
-    require_once 'Models/Alumnos/AgregarAlumno.php';
+    require_once 'Models/Alumnos/CrudAlumno.php';
 
     class CrudController{
 
@@ -15,8 +15,8 @@
             
             //Fin Paginacion
 
-            $alumnos = new DatosAlumno();
-            $datos = $alumnos->traerDatos($inicio,$postPorPagina);
+            $alumnos = new CrudAlumno();
+            $datos = $alumnos->ReadData($inicio,$postPorPagina);
 
             require_once 'Views/Crud/vistaCrud.php';            
         }
@@ -37,7 +37,7 @@
 
             require_once 'Validations/registro_validate.php';
 
-            $agregar_alumno = new AgregarAlumno();
+            $agregar_alumno = new CrudAlumno();
             
             $agregar_alumno->setNombre($nombre);
             $agregar_alumno->setApellidos($lastName);
@@ -45,7 +45,7 @@
             $agregar_alumno->setSexo($sex);
             $agregar_alumno->setFechaNacimiento($fecha_nacimiento);
 
-            $agregar_alumno->agregar_alumno();
+            $agregar_alumno->CreateStudent();
 
             header('Location: index.php?class=Crud&function=addStudent');
         }
@@ -57,12 +57,11 @@
 
             }else{
                 //Agregar Comprobacion si existe el alumno en la base de datos....
-                $delete = new AgregarAlumno();
+                $delete = new CrudAlumno();
                 $delete->setId($id);
                 
-                $delete->eliminar_alumno();
+                $delete->DeleteStudent();
                 header('Location: index.php?class=Crud&function=vistaCrud');
-
             }
         }
 
@@ -81,7 +80,7 @@
             
             require_once 'Validations/update_validate.php';
 
-            $actualizar_alumno = new AgregarAlumno();
+            $actualizar_alumno = new CrudAlumno();
             
             $actualizar_alumno->setId($id);
             $actualizar_alumno->setNombre($nombre);
@@ -90,10 +89,7 @@
             $actualizar_alumno->setSexo($sex);
             $actualizar_alumno->setFechaNacimiento($fecha_nacimiento);
 
-            $actualizar_alumno->update_alumno();
+            $actualizar_alumno->UpdateStudent();
             header('Location: index.php?class=Crud&function=vistaCrud');
-
         }
-
-
     }
