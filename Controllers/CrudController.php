@@ -1,7 +1,8 @@
 <?php
     require_once 'Models/Alumnos/DatosAlumno.php';
     require_once 'Models/Paginations/PaginacionModel.php';
-    
+    require_once 'Models/Alumnos/AgregarAlumno.php';
+
     class CrudController{
 
         public function vistaCrud(){
@@ -33,12 +34,19 @@
             if(!isset($_POST['submit'])){
                 header('Location: index.php?class=Crud&function=addStudent');
             }
-            
+
             require_once 'Validations/registro_validate.php';
 
-            echo $nombre . "</br>";
-            echo $lastName . "</br>";
+            $agregar_alumno = new AgregarAlumno();
+            
+            $agregar_alumno->setNombre($nombre);
+            $agregar_alumno->setApellidos($lastName);
+            $agregar_alumno->setEdad($edad);
+            $agregar_alumno->setSexo($sex);
+            $agregar_alumno->setFechaNacimiento($fecha_nacimiento);
 
-            echo $sex . "</br>";
+            $agregar_alumno->agregar_alumno();
+
+            header('Location: index.php?class=Crud&function=addStudent');
         }
     }

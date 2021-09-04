@@ -168,6 +168,19 @@ a{
     background-color: #702f79b2;
     margin: 0 auto;
     padding: 30px;
+    position: relative;
+}
+
+.agregar_alumno .back_Crud{
+    background-color: #3f3f3f;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 1;
+    right: 0;
+    display: block;
+    color: #fff;
+
 }
 
 .agregar_alumno label{
