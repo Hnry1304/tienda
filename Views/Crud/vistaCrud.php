@@ -29,10 +29,10 @@
         <div class="clear_fix"></div>
     <?php endforeach ?>
 
+    <!--Paginacion HTML !-->
+    <?php require_once 'Views/Paginacion/vistaPaginacion.php'?>
+    <!--Fin Paginacion HTML !-->
 </div>
 
-<!--Paginacion HTML !-->
-<?php require_once 'Views/Paginacion/vistaPaginacion.php'?>
-<!--Fin Paginacion HTML !-->
 
 <?php require_once 'Views/Assets/Layouts/footer.php'?>

@@ -36,6 +36,9 @@
             
             require_once 'Validations/registro_validate.php';
 
-            var_dump($_POST);
+            echo $nombre . "</br>";
+            echo $lastName . "</br>";
+
+            echo $sex . "</br>";
         }
     }
