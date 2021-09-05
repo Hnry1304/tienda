@@ -24,6 +24,26 @@
             header('Location: index.php?class=ViewCrud&function=addStudent');
         }
 
+
+        public function Update(){
+            $id = $_SESSION['id'];
+            
+            require_once 'Validations/update_validate.php';
+            
+            $actualizar_alumno = new CrudAlumno();
+            
+            $actualizar_alumno->setId($id);
+            $actualizar_alumno->setNombre($nombre);
+            $actualizar_alumno->setApellidos($lastName);
+            $actualizar_alumno->setEdad($edad);
+            $actualizar_alumno->setSexo($sex);
+            $actualizar_alumno->setFechaNacimiento($fecha_nacimiento);
+            
+            $actualizar_alumno->UpdateStudent();
+            header('Location: index.php?class=ViewCrud&function=vistaCrud');
+        }
+
+        
         public function Delete(){
             $id = $_GET['id'];
             if(!isset($id)){
@@ -37,23 +57,5 @@
                 $delete->DeleteStudent();
                 header('Location: index.php?class=ViewCrud&function=vistaCrud');
             }
-        }
-
-        public function Update(){
-            $id = $_SESSION['id'];
-            
-            require_once 'Validations/update_validate.php';
-
-            $actualizar_alumno = new CrudAlumno();
-            
-            $actualizar_alumno->setId($id);
-            $actualizar_alumno->setNombre($nombre);
-            $actualizar_alumno->setApellidos($lastName);
-            $actualizar_alumno->setEdad($edad);
-            $actualizar_alumno->setSexo($sex);
-            $actualizar_alumno->setFechaNacimiento($fecha_nacimiento);
-
-            $actualizar_alumno->UpdateStudent();
-            header('Location: index.php?class=ViewCrud&function=vistaCrud');
         }
     }
