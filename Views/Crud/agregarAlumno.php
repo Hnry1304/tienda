@@ -1,8 +1,10 @@
 <?php require_once 'Views/Assets/Layouts/header.php'?>
 
 <div class="agregar_alumno">
-    <a href="?class=Crud&function=vistaCrud" class="back_Crud">Regresar Al Crud</a>
+    <a href="?class=ViewCrud&function=vistaCrud" class="back_Crud">Regresar Al Crud</a>
+
     <h1>Agregar Alumno</h1>
+
     <form action="?class=Crud&function=validarAlumno" method="post">
         <label for="name">
             Name:

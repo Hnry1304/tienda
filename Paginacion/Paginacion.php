@@ -12,5 +12,5 @@
     $numero_paginacion = $paginacion->numeroPaginacion($numeroDatos,$postPorPagina);
         
     if($pagina > $numero_paginacion || $pagina < 1){
-        header('Location: index.php?class=Crud&function=vistaCrud&pagina=1');
+        header('Location: index.php?class=ViewCrud&function=vistaCrud&pagina=1');
     }

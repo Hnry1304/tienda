@@ -21,7 +21,7 @@
         $_SESSION['month'] = $month;
         $_SESSION['year'] = $year;
 
-        header("Location: index.php?class=Crud&function=vistaUpdate&id=$id");
+        header("Location: index.php?class=ViewCrud&function=vistaUpdate&id=$id");
     }
 
     $nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
@@ -48,7 +48,7 @@
     //VALIDACION DE EDAD
 
     if($day <1 || $day >32 || $month <1 || $month >13 || $year <1990 || $year >2006){
-        header("Location: index.php?class=Crud&function=vistaUpdate&id=$id");
+        header("Location: index.php?class=ViewCrud&function=vistaUpdate&id=$id");
     }else{
         //Calcular Edad Alumno
         $anio_actual = date("Y");
@@ -60,5 +60,5 @@
     // VALIDAR SI SEXO ESTA BIEN
     // SEXO DISPONIBLES MASCULINO 0 FEMENINO
     if($sex != 'MASCULINO' && $sex != 'FEMENINO'){
-        header("Location: index.php?class=Crud&function=vistaUpdate&id=$id");
+        header("Location: index.php?class=ViewCrud&function=vistaUpdate&id=$id");
     }

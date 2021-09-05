@@ -1,38 +1,12 @@
 <?php
     require_once 'Models/Alumnos/CrudAlumno.php';
-    require_once 'Models/Paginations/PaginacionModel.php';
-    require_once 'Models/Alumnos/CrudAlumno.php';
-
+    
     class CrudController{
 
-        public function vistaCrud(){
-            $username =  $_SESSION['usuario'];
-            if(!isset($username)){
-                header('Location: index.php?class=Login&function=vistaLogin');
-            }
-            //Paginacion
-            require_once 'Paginacion/Paginacion.php';
-            
-            //Fin Paginacion
-
-            $alumnos = new CrudAlumno();
-            $datos = $alumnos->ReadData($inicio,$postPorPagina);
-
-            require_once 'Views/Crud/vistaCrud.php';            
-        }
-
-        public function addStudent(){
-            $username =  $_SESSION['usuario'];
-            if(!isset($username)){
-                header('Location: index.php?class=Login&function=vistaLogin');
-            }
-
-            require_once 'Views/Crud/agregarAlumno.php';
-        }
 
         public function validarAlumno(){
             if(!isset($_POST['submit'])){
-                header('Location: index.php?class=Crud&function=addStudent');
+                header('Location: index.php?class=ViewCrud&function=addStudent');
             }
 
             require_once 'Validations/registro_validate.php';
@@ -47,13 +21,13 @@
 
             $agregar_alumno->CreateStudent();
 
-            header('Location: index.php?class=Crud&function=addStudent');
+            header('Location: index.php?class=ViewCrud&function=addStudent');
         }
 
         public function Delete(){
             $id = $_GET['id'];
             if(!isset($id)){
-                header('Location: index.php?class=Crud&function=addStudent');
+                header('Location: index.php?class=ViewCrud&function=addStudent');
 
             }else{
                 //Agregar Comprobacion si existe el alumno en la base de datos....
@@ -61,18 +35,8 @@
                 $delete->setId($id);
                 
                 $delete->DeleteStudent();
-                header('Location: index.php?class=Crud&function=vistaCrud');
+                header('Location: index.php?class=ViewCrud&function=vistaCrud');
             }
-        }
-
-        public function vistaUpdate(){
-            $id =$_GET['id'];
-            if(!isset($id)){
-                header('Location: index.php?class=Crud&function=vistaCrud');
-            }
-
-            $_SESSION['id'] = $id;
-            require_once('Views/Crud/vistaActualizar.php');
         }
 
         public function Update(){
@@ -90,6 +54,6 @@
             $actualizar_alumno->setFechaNacimiento($fecha_nacimiento);
 
             $actualizar_alumno->UpdateStudent();
-            header('Location: index.php?class=Crud&function=vistaCrud');
+            header('Location: index.php?class=ViewCrud&function=vistaCrud');
         }
     }
