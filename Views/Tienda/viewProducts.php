@@ -4,7 +4,7 @@
     $_SESSION['product'] = $_GET['product'];
     $table_name = $_SESSION['product'];
 ?>
-<a href="?class=ViewCrud&function=addStudent" class="add_estudent">Add New Product</a>
+<a href="?class=ViewTienda&function=viewCreateProduct&product=<?= $table_name?>" class="add_estudent">Add New Product</a>
 
 <div class="table">
 
@@ -32,7 +32,7 @@
             <?php endif ?>
 
             <div class="opcion">
-                <a href="?class=ViewCrud&function=vistaUpdate&id=<?= $datos['ID'] ?>">Actualizar </a>
+                <a href="?class=ViewTienda&function=viewUpdateProduct&id=<?= $datos['ID'] ?>">Actualizar </a>
                 <a href="?class=Crud&function=Delete&id=<?= $datos['ID'] ?>">Eliminar</a>
             </div>
             

@@ -37,22 +37,22 @@
         }
 
 
-        public function addStudent(){
+        public function viewCreateProduct(){
             $username =  $_SESSION['usuario'];
             if(!isset($username)){
                 header('Location: index.php?class=Login&function=vistaLogin');
             }
 
-            require_once 'Views/Crud/agregarAlumno.php';
+            require_once 'Views/Tienda/viewCreate_UpdateProduct.php';
         }
 
-        public function vistaUpdate(){
+        public function viewUpdateProduct(){
             $id =$_GET['id'];
             if(!isset($id)){
-                header('Location: index.php?class=View&function=vistaCrud');
+                header('Location: index.php?class=View&Tienda=viewHomePage');
             }
 
             $_SESSION['id'] = $id;
-            require_once('Views/Crud/vistaActualizar.php');
+            require_once('Views/Tienda/viewCreate_UpdateProduct.php');
         }
     }

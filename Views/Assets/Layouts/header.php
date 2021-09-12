@@ -14,6 +14,7 @@
     <!-- PAGINATIONS -->
     <link rel="stylesheet" href="Views/Assets/Css/paginations.css">
     <!-- END PAGINATIONS -->
+    <link rel="stylesheet" href="Views/Assets/Css/Create_update.css">
     
 </head>
 
@@ -24,15 +25,15 @@
             
             <nav class="navegacion">
                 <ul>
-                    <?php if(isset($_SESSION['product']) && $_SESSION['product'] == 'gorras'):?>
+                    <?php if(isset($_GET['product']) && $_GET['product'] == 'gorras'):?>
                         <li><a href="?class=Login&function=vistaLogin" class="log_Out">Log Out</a></li>
                         <li><a href="#">Username</a></li>
                         <li><a href="?class=ViewTienda&function=viewProducts&product=gorras&pagina=1" class="active">Gorras</a></li>
                         <li><a href="?class=ViewTienda&function=viewProducts&product=tazas&pagina=1">Tazas</a></li>
-                    <?php elseif(isset($_SESSION['product']) && $_SESSION['product'] == 'tazas'):?>
+                    <?php elseif(isset($_GET['product']) && $_GET['product'] == 'tazas'):?>
                         <li><a href="?class=Login&function=vistaLogin" class="log_Out">Log Out</a></li>
                         <li><a href="#">Username</a></li>
-                        <li><a href="?class=ViewTienda&function=viewProducts&product=gorras&pagina=1">Gorras</a></li>
+                        <li><a href="?class=ViewTienda&function=viewProducts&product=gorras&pagina=1" >Gorras</a></li>
                         <li><a href="?class=ViewTienda&function=viewProducts&product=tazas&pagina=1" class="active">Tazas</a></li>
                     <?php else: ?>
                         <li><a href="?class=Login&function=vistaLogin" class="log_Out">Log Out</a></li>

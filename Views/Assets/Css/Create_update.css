@@ -1,0 +1,68 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+.agregar_alumno{
+    height: 450px;
+    background-color: rgb(104, 29, 44);
+    color: darkgray;
+    border-radius: 10px;
+    padding: 5px;
+    position: relative;
+}
+
+
+.agregar_alumno a{
+    width: 150px;
+    display: block;
+    background-color: rgba(51, 20, 100, 0.575);
+    color: darkgray;
+    padding: 5px 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.agregar_alumno a:hover{
+    color: #fff;
+}
+
+.agregar_alumno h1{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.agregar_alumno label{
+    width: 100%;
+    font-weight: bold;
+}
+
+.agregar_alumno input[type='text']{
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    background-color: rgb(74, 80, 74);
+    color: #fff;
+}
+
+.agregar_alumno input[type='submit']{
+    outline: none;
+    width: 300px;
+    background-color: #06294188;
+    padding: 5px 0;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    position: absolute;
+    bottom: 20px;
+    left: 400px;
+}
+
+.agregar_alumno input[type='submit']:hover{
+    cursor: pointer;
+    background-color: #77362bf1;
+}
