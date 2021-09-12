@@ -1,0 +1,82 @@
+
+.container .table{
+    padding: 10px 0px;
+    height: 250px;
+    border-top: 1px dashed #fff;
+    border-bottom: 1px dashed #fff;
+    position: relative;
+}
+
+.table .categorias{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.table .categorias .name,.table .fila .name{
+    width: 300px;
+    background-color: #3257329c;
+    float: left;
+    padding: 5px 0;
+    text-align: start;
+    text-indent: 5px;
+}
+
+.table .categorias .apellidos,.table .fila .apellidos{
+    width: 300px;
+    background-color: #3257329c;
+    float: left;
+    padding: 5px 0;
+    text-align: start;
+    text-indent: 5px;
+}
+
+.table .categorias .age, .table .fila .age{
+    width: 60px;
+    background-color: #3257329c;
+    float: left;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.table .categorias .sexo, .table .fila .sexo{
+    width: 120px;
+    background-color: #3257329c;
+    float: left;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.table .categorias .fecha_nacimiento, .table .fila .fecha_nacimiento{
+    width: 180px;
+    background-color: #3257329c;
+    float: left;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.table .categorias .opcion{
+    width: 225px;
+    background-color: #3257329c;
+    float: left;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.table .fila .opcion a{
+    display: block;
+    background-color: #3257329c;
+    padding:  5px 25px;
+    float: left;
+    color: #cac7c7;
+    
+}
+
+.table .fila .opcion a:hover{
+    background-color: #443828ab;
+}
+
+.table .clear_fix{
+    float: none;
+    clear: both;
+}

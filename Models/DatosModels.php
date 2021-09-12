@@ -7,7 +7,10 @@
         private $edad;
         private $sexo;
         private $fecha_nacimiento;
+        private $table_name;
+
         protected $conexion;
+
 
         public function __construct(){
             $this->conexion = new Database();
@@ -38,6 +41,10 @@
             $this->fecha_nacimiento = $fecha_nacimiento;
         }
 
+        public function setTableName($table_name){
+            $this->table_name = $table_name;
+        }
+
         public function getId(){
             return $this->id;
         }
@@ -60,5 +67,9 @@
 
         public function getFechaNacimiento(){
             return $this->fecha_nacimiento;
+        }
+
+        public function getTableName(){
+            return $this->table_name;
         }
     }

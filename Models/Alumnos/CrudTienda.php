@@ -1,6 +1,6 @@
 <?php
     require_once 'Models/DatosModels.php';
-    class CrudAlumno extends DatosModels{
+    class CrudTienda extends DatosModels{
 
         public function CreateStudent(){
             $sql = "INSERT INTO alumnos VALUES(
@@ -20,7 +20,7 @@
 
         public function ReadData($inicio,$fin){
 
-            $sql = "SELECT *FROM alumnos LIMIT $inicio, $fin";
+            $sql = "SELECT *FROM ".$this->getTableName()." LIMIT $inicio, $fin";
             $statement = $this->conexion->prepare($sql);
             $statement->execute();
 

@@ -1,0 +1,28 @@
+.paginacion{
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    bottom: 0px;
+}
+
+.paginacion a{
+    width: 50px;
+    background-color: #501111;
+    display: block;
+    color: #fff;
+    padding: 5px;
+    float: left;
+    text-align: center;
+}
+
+.paginacion a:hover{
+    background-color: cornflowerblue;
+}
+
+.paginacion .enable{
+    background-color: #2a5ba573;
+}
+
+.paginacion .posicion{
+    background-color: crimson;
+}

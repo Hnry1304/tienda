@@ -4,7 +4,7 @@
 
         public function Datos(){
 
-            $sql = "SELECT *FROM alumnos";
+            $sql = "SELECT *FROM ".$this->getTableName();
              
             $statement = $this->conexion->prepare($sql);
             $statement->execute();
@@ -15,7 +15,7 @@
         }
 
         public function totalDatos(){
-            $sql = "SELECT *FROM alumnos";
+            $sql = "SELECT *FROM ".$this->getTableName();
              
             $statement = $this->conexion->prepare($sql);
             $statement->execute();
