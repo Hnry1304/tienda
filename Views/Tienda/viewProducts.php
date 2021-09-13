@@ -8,6 +8,7 @@
 
 <div class="table">
 
+    <?= $_GET['function'] ?>
     <div class="categorias">
         <div class="name">TALLA</div>
         <div class="apellidos">PRECIO</div>
@@ -26,13 +27,8 @@
         <div class="fila">
             <div class="name"><?= $datos['TAMANO'];?></div>
             <div class="apellidos"><?= $datos['PRECIO'];?></div>
-            <div class="age"><?= $datos['IMAGEN'];?></div>
-            
-            <?php if($table_name == 'gorras'):?>
-                <div class="sexo"><?= $datos['COLOR_GORRA'];?></div>
-            <?php else:?>
-                <div class="sexo"><?= $datos['COLOR_TAZA'];?></div>
-            <?php endif ?>
+            <div class="age"><?= $datos['IMAGEN'];?></div>            
+            <div class="sexo"><?= $datos['COLOR_PRODUCTO'];?></div>
 
             <div class="opcion">
                 <a href="?class=ViewTienda&function=viewUpdateProduct&id=<?= $datos['ID'] ?>">Actualizar </a>

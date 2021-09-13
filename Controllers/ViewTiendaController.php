@@ -43,13 +43,15 @@
                 header('Location: index.php?class=Login&function=vistaLogin');
             }
 
+
             require_once 'Views/Tienda/viewCreate_UpdateProduct.php';
         }
 
         public function viewUpdateProduct(){
+            
             $id =$_GET['id'];
             if(!isset($id)){
-                header('Location: index.php?class=View&Tienda=viewHomePage');
+                header('Location: index.php?class=ViewTienda&function=viewHomePage');
             }
 
             $_SESSION['id'] = $id;

@@ -9,6 +9,8 @@
                 header('Location: index.php?class=ViewTienda&function=viewProducts');
             }
 
+            $opcion = "viewCreateProduct";
+
             require_once 'Validations/Create_UpdateProducts.php';
 
             $table_name = $_SESSION['product'];
@@ -22,27 +24,28 @@
             $createProduct->setTableName($table_name);
             
             $createProduct->CreateProduct();
-
-            header("Location: index.php?class=ViewTienda&function=viewCreateProduct&producto=$table_name");
+            header("Location: index.php?class=ViewTienda&function=viewCreateProduct&product=$table_name");
         }
 
 
-        public function Update(){
+        public function UpdateProduct(){
             $id = $_SESSION['id'];
+            $opcion = "viewUpdateProduct";
+
+            require_once 'Validations/Create_UpdateProducts.php';
             
-            require_once 'Validations/update_validate.php';
+            $table_name = $_SESSION['product'];
+            $UpdateProduct = new CrudTienda();
             
-            $actualizar_alumno = new CrudAlumno();
+            $UpdateProduct->setId($id);
+            $UpdateProduct->setTamano($talla);
+            $UpdateProduct->setPrecio($precio);
+            $UpdateProduct->setImagen($imagen);
+            $UpdateProduct->setColorProducto($color_producto);
+            $UpdateProduct->setTableName($table_name);
             
-            $actualizar_alumno->setId($id);
-            $actualizar_alumno->setNombre($nombre);
-            $actualizar_alumno->setApellidos($lastName);
-            $actualizar_alumno->setEdad($edad);
-            $actualizar_alumno->setSexo($sex);
-            $actualizar_alumno->setFechaNacimiento($fecha_nacimiento);
-            
-            $actualizar_alumno->UpdateStudent();
-            header('Location: index.php?class=ViewCrud&function=vistaCrud');
+            $UpdateProduct->UpdateProduct();
+            header("Location: index.php?class=ViewTienda&function=viewUpdateProduct&product=$table_name");
         }
 
         

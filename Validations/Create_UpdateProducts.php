@@ -1,5 +1,6 @@
 <?php
     $productName = $_SESSION['product'];
+    
 
     $talla = $_POST['talla'];
     $precio = $_POST['precio'];
@@ -17,16 +18,21 @@
         $_SESSION['imagen'] = $imagen;
         $_SESSION['color_producto'] = $color_producto;
         
-        header("Location: index.php?class=ViewTienda&function=CreateProduct&product=$productName&pagina=1");
+        $id = $_SESSION['id'];
+        if($opcion == "viewUpdateProduct"){
+            header("Location: index.php?class=ViewTienda&function=$opcion&product=$productName&id=$id");
+        }else{
+            header("Location: index.php?class=ViewTienda&function=$opcion&product=$productName");
+        }
     }
 
     $talla = filter_var($talla, FILTER_SANITIZE_STRING);
     $precio = filter_var($precio, FILTER_SANITIZE_STRING);
     $imagen = filter_var($imagen, FILTER_SANITIZE_STRING);
-    $color_gorra = filter_var($color_gorra, FILTER_SANITIZE_STRING);
+    $color_producto = filter_var($color_producto, FILTER_SANITIZE_STRING);
 
     //Quitar Numeros y caraceteres especiales en el campo nombre y apellidos
     $talla = preg_replace('([^0-9])', '', $talla);
     $precio = preg_replace('([^0-9])','', $precio);
     $imagen = preg_replace('([^A-Za-z])','', $imagen);
-    $color_gorra = preg_replace('([^A-Za-z])', '', $color_gorra);
+    $color_producto = preg_replace('([^A-Za-z])', '', $color_producto);

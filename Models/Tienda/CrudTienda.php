@@ -28,16 +28,15 @@
             return $datos;
         }
 
-        public function UpdateStudent(){
-            $sql = "UPDATE alumnos SET NAME = :name, LASTNAME = :lastName, AGE = :age, SEX = :sex, FECHA_NACIMIENTO = :fecha WHERE ID = ".$this->getId();
+        public function UpdateProduct(){
+            $sql = "UPDATE ".$this->getTableName()." SET TAMANO = :tamano, PRECIO = :precio, IMAGEN = :imagen, COLOR_PRODUCTO = :color WHERE ID = ".$this->getId();
             $statement = $this->conexion->prepare($sql);
 
             $statement->execute(array(
-                ":name" => $this->getNombre(),
-                ":lastName" => $this->getApellidos(),
-                ":age" => $this->getEdad(),
-                ":sex" => $this->getSexo(),
-                ":fecha" => $this->getFechaNacimiento()
+                ":tamano" => $this->getTamano(),
+                ":precio" => $this->getPrecio(),
+                ":imagen" => $this->getImagen(),
+                ":color" => $this->getColorProducto(),
             ));
         }
 

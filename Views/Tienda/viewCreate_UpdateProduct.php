@@ -9,12 +9,16 @@
         <h1>Agregar Producto</h1>
     <?php endif ?>
 
-    <form action="?class=Crud&function=CreateProduct" method="post">
+    <?php if($_GET['function'] == 'viewUpdateProduct' ? $option = "UpdateProduct" :$option = "CreateProduct")?>
+
+
+    <form action="?class=Crud&function=<?=$option?>" method="post">
         <label for="talla">
             Talla:
             <input type="text" name="talla" >
         </label>
 
+        
         <label for="precio">
             Precio:
             <input type="text" name="precio" >
@@ -30,7 +34,6 @@
             <input type="text" name="color_producto">
         </label>
         
-
         <input type="submit" name="submit" value="Agregar">
     </form>
 
