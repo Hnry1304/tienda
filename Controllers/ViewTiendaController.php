@@ -1,5 +1,5 @@
 <?php
-    require_once 'Models/Alumnos/CrudTienda.php';
+    require_once 'Models/Tienda/CrudTienda.php';
     require_once 'Models/Paginations/PaginacionModel.php';
 
     class ViewTiendaController{

@@ -1,27 +1,29 @@
 <?php
-    require_once 'Models/Alumnos/CrudAlumno.php';
+    require_once 'Models/Tienda/CrudTienda.php';
     
     class CrudController{
 
 
-        public function validarAlumno(){
+        public function CreateProduct(){
             if(!isset($_POST['submit'])){
-                header('Location: index.php?class=ViewCrud&function=addStudent');
+                header('Location: index.php?class=ViewTienda&function=viewProducts');
             }
 
-            require_once 'Validations/registro_validate.php';
+            require_once 'Validations/Create_UpdateProducts.php';
 
-            $agregar_alumno = new CrudAlumno();
+            $table_name = $_SESSION['product'];
+
+            $createProduct = new CrudTienda();
             
-            $agregar_alumno->setNombre($nombre);
-            $agregar_alumno->setApellidos($lastName);
-            $agregar_alumno->setEdad($edad);
-            $agregar_alumno->setSexo($sex);
-            $agregar_alumno->setFechaNacimiento($fecha_nacimiento);
+            $createProduct->setTamano($talla);
+            $createProduct->setPrecio($precio);
+            $createProduct->setImagen($imagen);
+            $createProduct->setColorProducto($color_producto);
+            $createProduct->setTableName($table_name);
+            
+            $createProduct->CreateProduct();
 
-            $agregar_alumno->CreateStudent();
-
-            header('Location: index.php?class=ViewCrud&function=addStudent');
+            header("Location: index.php?class=ViewTienda&function=viewCreateProduct&producto=$table_name");
         }
 
 

@@ -2,18 +2,17 @@
     require_once 'Models/DatosModels.php';
     class CrudTienda extends DatosModels{
 
-        public function CreateStudent(){
-            $sql = "INSERT INTO alumnos VALUES(
-                NULL,:name,:lastName,:age,:sex,:fecha
+        public function CreateProduct(){
+            $sql = "INSERT INTO ".$this->getTableName()." VALUES(
+                NULL,:talla,:precio,:imagen,:color
             )";
             $statement = $this->conexion->prepare($sql);
             
             $statement->execute(array(
-                ":name" => $this->getNombre(),
-                ":lastName" => $this->getApellidos(),
-                ":age" => $this->getEdad(),
-                ":sex" => $this->getSexo(),
-                ":fecha" => $this->getFechaNacimiento()
+                ":talla" => $this->getTamano(),
+                ":precio" => $this->getPrecio(),
+                ":imagen" => $this->getImagen(),
+                ":color" => $this->getColorProducto(),
             ));
             
         }

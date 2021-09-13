@@ -14,8 +14,9 @@
         <div class="age">IMAGEN</div>
 
         <?php if($table_name == 'gorras'):?>
-            
             <div class="sexo">COLOR GORRA</div>
+        <?php else: ?>
+            <div class="sexo">COLOR TAZA</div>
         <?php endif ?>
 
         <div class="opcion">OPTIONS</div>
@@ -29,6 +30,8 @@
             
             <?php if($table_name == 'gorras'):?>
                 <div class="sexo"><?= $datos['COLOR_GORRA'];?></div>
+            <?php else:?>
+                <div class="sexo"><?= $datos['COLOR_TAZA'];?></div>
             <?php endif ?>
 
             <div class="opcion">

@@ -9,7 +9,7 @@
         <h1>Agregar Producto</h1>
     <?php endif ?>
 
-    <form action="?class=Crud&function=validarAlumno" method="post">
+    <form action="?class=Crud&function=CreateProduct" method="post">
         <label for="talla">
             Talla:
             <input type="text" name="talla" >
@@ -25,12 +25,11 @@
             <input type="text" name="imagen" >
         </label>
 
-        <?php if($_SESSION['product'] == 'gorras'):?>
-            <label for="Color_Gorra">
-                Color Gorra:
-                <input type="text" name="colorGorra">
-            </label>
-        <?php endif  ?>
+        <label for="Color_Producto">
+            Color Producto:
+            <input type="text" name="color_producto">
+        </label>
+        
 
         <input type="submit" name="submit" value="Agregar">
     </form>

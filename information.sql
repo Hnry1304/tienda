@@ -34,6 +34,7 @@ CREATE TABLE tazas(
     TAMANO INT NOT NULL,
     PRECIO FLOAT NOT NULL,
     IMAGEN VARCHAR(50)
+    COLOR_TAZA VARCHAR(50)
 );
 
 
@@ -47,16 +48,16 @@ CREATE TABLE gorras(
 
 
 INSERT INTO tazas VALUES
-    (NULL, 11,60.00,'TAZA'),
-    (NULL, 11,60.00,'TAZA'),
-    (NULL, 11,60.00,'TAZA'),
-    (NULL, 11,60.00,'TAZA'),
-    (NULL, 11,60.00,'TAZA'),
-    (NULL, 11,60.00,'TAZA'),
-    (NULL, 11,60.00,'TAZA'),
-    (NULL, 11,60.00,'TAZA'),
-    (NULL, 11,60.00,'TAZA'),
-    (NULL, 11,60.00,'TAZA')
+    (NULL, 11,60.00,'TAZA','WHITE'),
+    (NULL, 11,60.00,'TAZA','BLANK'),
+    (NULL, 11,60.00,'TAZA','YELLOW'),
+    (NULL, 11,60.00,'TAZA','PINK'),
+    (NULL, 11,60.00,'TAZA','BLUE'),
+    (NULL, 11,60.00,'TAZA','GRAY'),
+    (NULL, 11,60.00,'TAZA','RED'),
+    (NULL, 11,60.00,'TAZA','GREEN'),
+    (NULL, 11,60.00,'TAZA','BROWN'),
+    (NULL, 11,60.00,'TAZA','ORANGE')
 ;
 
 INSERT INTO gorras VALUES
