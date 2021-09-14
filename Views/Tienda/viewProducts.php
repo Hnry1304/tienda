@@ -32,7 +32,7 @@
 
             <div class="opcion">
                 <a href="?class=ViewTienda&function=viewUpdateProduct&id=<?= $datos['ID'] ?>">Actualizar </a>
-                <a href="?class=Crud&function=Delete&id=<?= $datos['ID'] ?>">Eliminar</a>
+                <a href="?class=Crud&function=DeleteProduct&id=<?= $datos['ID'] ?>">Eliminar</a>
             </div>
             
         </div>

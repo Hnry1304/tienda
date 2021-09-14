@@ -40,8 +40,8 @@
             ));
         }
 
-        public function DeleteStudent(){
-            $sql = "DELETE FROM alumnos WHERE ID = :id";
+        public function DeleteProduct(){
+            $sql = "DELETE FROM ".$this->getTableName()." WHERE ID = :id";
             $statement = $this->conexion->prepare($sql);
 
             $statement->execute(array(

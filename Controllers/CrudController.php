@@ -49,18 +49,20 @@
         }
 
         
-        public function Delete(){
+        public function DeleteProduct(){
             $id = $_GET['id'];
+            $table_name = $_SESSION['product'];
             if(!isset($id)){
-                header('Location: index.php?class=ViewCrud&function=addStudent');
+                header("Location: index.php?class=ViewTienda&function=viewProducts&product=$table_name&id=$id");
 
             }else{
                 //Agregar Comprobacion si existe el alumno en la base de datos....
-                $delete = new CrudAlumno();
+                $delete = new CrudTienda();
+                $delete->setTableName($table_name);
                 $delete->setId($id);
                 
-                $delete->DeleteStudent();
-                header('Location: index.php?class=ViewCrud&function=vistaCrud');
+                $delete->DeleteProduct();
+                header("Location: index.php?class=ViewTienda&function=viewProducts&product=$table_name");
             }
         }
     }
