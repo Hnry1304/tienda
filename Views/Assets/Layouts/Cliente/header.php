@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <a href="#" class="title">Clientes</a>
+            <a href="?class=ViewCliente&function=viewHomePage&producto=home&pagina=1" class="title">Clientes</a>
 
             <nav class="barra_navegacion">
                 <ul>
@@ -21,8 +21,8 @@
                         <a href="#" class="menu">Menu</a>
 
                         <ul class="submenu">
-                            <li><a href="#">Gorras</a></li>
-                            <li><a href="#">Tazas</a></li>
+                            <li><a href="?class=ViewCliente&function=viewProducts&producto=gorras&pagina=1">Gorras</a></li>
+                            <li><a href="?class=ViewCliente&function=viewProducts&producto=tazas&pagina=1">Tazas</a></li>
                             <li><a href="#">My Account</a></li>
                             <li><a href="#">Settings</a></li>
                             <li><a href="#">Login</a></li>

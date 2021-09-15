@@ -11,6 +11,10 @@
 
     $numero_paginacion = $paginanacion->numeroPaginacion($numeroDatos,$postPorPagina);
 
+
+    $function = $_SESSION['function'];
+    $producto = $_SESSION['producto'];
+
     if($pagina > $numero_paginacion || $pagina < 1){
-        header("Location: index.php?class=ViewCliente&function=viewHomePage&pagina=1");
+        header("Location: index.php?class=ViewCliente&function=$function&producto=$producto&pagina=1");
     }
