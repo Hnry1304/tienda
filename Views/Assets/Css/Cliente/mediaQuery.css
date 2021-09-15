@@ -1,0 +1,41 @@
+@media (max-width: 525px) {
+    .homePage .productos{
+
+        height: 550px;
+        box-sizing: border-box;
+    }
+
+    .productos .product{
+        width: 48%;
+
+    }
+}
+
+@media (min-width: 526px) {
+    .homePage .productos{
+
+        height: 320px;
+        box-sizing: border-box;
+    }
+
+    .productos .product{
+        width: 24%;
+
+    }
+}
+
+@media (min-width: 1200px) {
+    .container{
+        margin: 0 auto;
+    }
+    .homePage .productos{
+
+        height: 320px;
+        box-sizing: border-box;
+    }
+
+    .productos .product{
+        width: 24%;
+
+    }
+}
