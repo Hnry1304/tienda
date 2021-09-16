@@ -16,5 +16,5 @@
     $producto = $_SESSION['producto'];
 
     if($pagina > $numero_paginacion || $pagina < 1){
-        header("Location: index.php?class=ViewCliente&function=$function&producto=$producto&pagina=1");
+        header("Location: index.php?class=ViewTienda&function=$function&producto=$producto&pagina=1");
     }

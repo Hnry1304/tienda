@@ -6,37 +6,57 @@
 
 
         public function viewHomePage(){
-            $username =  $_SESSION['usuario'];
-            if(!isset($username)){
-                header('Location: index.php?class=Login&function=vistaLogin');
+            isset($_SESSION['usuario']) ? $usuario= 'Henry' : $usuario = '' ;
+
+            if($usuario == 'Henry'){
+                require_once 'Views/Tienda/homePage.php';
+            }else{
+                $table_name = 'topVentas';
+
+                $_SESSION['function'] = $_GET['function'];
+
+                $_SESSION['producto'] = $_GET['producto'];
+                //Paginacion
+                require_once 'Paginacion/Cliente/paginacion.php';
+                //Fin Paginacion
+                
+                $readDataBase = new CrudTienda();
+                $readDataBase->setTableName($table_name);
+                $datos = $readDataBase->ReadData($inicio,$postPorPagina);
+
+                require_once 'Views/Clientes/homePage.php';
             }
 
-            require_once 'Views/Tienda/homePage.php';
         }
 
         public function viewProducts(){
-            $username =  $_SESSION['usuario'];
+            isset($_SESSION['usuario']) ? $usuario= 'Henry' : $usuario = '' ;
             
-            if(!isset($username)){
-                header('Location: index.php?class=Login&function=vistaLogin');
+            if($usuario == 'Henry'){
+                $_SESSION['product'] = $_GET['product'];
+                $table_name = $_SESSION['product'];
+
+                $url = 'Views/Tienda/viewProducts.php';
+                $paginacion_url = 'Paginacion/Paginacion.php';
+
+            }else{
+                $_SESSION['producto'] = $_GET['producto'];
+                $table_name = $_SESSION['producto'];
+
+                $url = 'Views/Clientes/homePage.php';
+                $_SESSION['function'] = $_GET['function'];
+                $paginacion_url = 'Paginacion/Cliente/paginacion.php';
             }
-            $_SESSION['product'] = $_GET['product'];
-            $table_name = $_SESSION['product'];
 
-            if($table_name != 'tazas' && $table_name != 'gorras'){
-                header('Location: index.php?class=ViewTienda&function=viewHomePage');
-            }
+            // Inicio Paginacion
+            require_once "$paginacion_url";
+            // Fin Paginacion
 
-            //Paginacion
-            require_once 'Paginacion/Paginacion.php';
-            
-            //Fin Paginacion
+            $readDataBase = new CrudTienda();
+            $readDataBase->setTableName($table_name);
+            $datos = $readDataBase->ReadData($inicio,$postPorPagina);
 
-            $alumnos = new CrudTienda();
-            $alumnos->setTableName($table_name);
-            $datos = $alumnos->ReadData($inicio,$postPorPagina);
-
-            require_once 'Views/Tienda/viewProducts.php';            
+            require_once "$url";
         }
 
 
