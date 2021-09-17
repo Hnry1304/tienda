@@ -13,8 +13,8 @@
 
 
     $function = $_SESSION['function'];
-    $producto = $_SESSION['producto'];
+    $producto = $_SESSION['product'];
 
     if($pagina > $numero_paginacion || $pagina < 1){
-        header("Location: index.php?class=ViewTienda&function=$function&producto=$producto&pagina=1");
+        header("Location: index.php?class=ViewTienda&function=$function&product=$producto&pagina=1");
     }
