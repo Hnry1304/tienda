@@ -1,4 +1,4 @@
-<?php require_once 'Views/Assets/Layouts/header.php'?>
+<?php require_once 'Views/Assets/Layouts/Admin/header.php'?>
 
 <?php
     $_SESSION['product'] = $_GET['product'];
@@ -45,4 +45,4 @@
 </div>
 
 
-<?php require_once 'Views/Assets/Layouts/footer.php'?>
+<?php require_once 'Views/Assets/Layouts/Admin/footer.php'?>

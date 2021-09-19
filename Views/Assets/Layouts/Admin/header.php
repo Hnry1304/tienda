@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- CSS HEADER -->
-    <link rel="stylesheet" href="Views/Assets/Css/header.css">
+    <link rel="stylesheet" href="Views/Assets/Css/Admin/header.css">
     <!-- FIN HEADER -->
     <!--PRODUCTS CSS -->
-    <link rel="stylesheet" href="Views/Assets/Css/products.css">
+    <link rel="stylesheet" href="Views/Assets/Css/Admin/products.css">
     <!--END PRODUCTS CSS -->
     <!-- PAGINATIONS -->
-    <link rel="stylesheet" href="Views/Assets/Css/paginations.css">
+    <link rel="stylesheet" href="Views/Assets/Css/Admin/paginations.css">
     <!-- END PAGINATIONS -->
-    <link rel="stylesheet" href="Views/Assets/Css/Create_update.css">
+    <link rel="stylesheet" href="Views/Assets/Css/Admin/Create_update.css">
     
 </head>
 
