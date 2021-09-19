@@ -11,18 +11,7 @@
             if($usuario == 'Henry'){
                 require_once 'Views/Tienda/homePage.php';
             }else{
-                $table_name = 'topVentas';
-
-                $_SESSION['function'] = $_GET['function'];
-
-                $_SESSION['producto'] = $_GET['product'];
-                //Paginacion
-                require_once 'Paginacion/Cliente/paginacion.php';
-                //Fin Paginacion
-                
-                $readDataBase = new CrudTienda();
-                $readDataBase->setTableName($table_name);
-                $datos = $readDataBase->ReadData($inicio,$postPorPagina);
+                require_once 'Controllers_Config/ControllersConfig.php';    
 
                 require_once 'Views/Clientes/homePage.php';
             }
@@ -33,12 +22,9 @@
             
             require_once 'Controllers_Config/ControllersConfig.php';
 
-            $readDataBase = new CrudTienda();
-            $readDataBase->setTableName($table_name);
-            $datos = $readDataBase->ReadData($inicio,$postPorPagina);
-
             require_once "$url";
         }
+
 
         public function viewCreateProduct(){
             $username =  $_SESSION['usuario'];

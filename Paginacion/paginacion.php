@@ -1,6 +1,6 @@
 <?php 
     $pagina = isset($_GET['pagina'])? (int)$_GET['pagina'] : 0;
-    $postPorPagina = 4;
+    $postPorPagina = $_SESSION['postPorPagina'];
 
     $inicio = ($pagina > 1) ? ($pagina * $postPorPagina - $postPorPagina) : 0;
 

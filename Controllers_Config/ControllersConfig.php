@@ -3,17 +3,23 @@
     $table_name = $_SESSION['product'];
     
     if($usuario == 'Henry'){
-
+        $_SESSION['function'] = $_GET['function'];
         $url = 'Views/Tienda/viewProducts.php';
-        $paginacion_url = 'Paginacion/Paginacion.php';
+                
+        $_SESSION['postPorPagina'] = 5;
 
     }else{
         $_SESSION['function'] = $_GET['function'];
 
         $url = 'Views/Clientes/homePage.php';
-        $paginacion_url = 'Paginacion/Cliente/paginacion.php';
+
+        $_SESSION['postPorPagina'] = 4;
     }
 
     // Inicio Paginacion
-    require_once "$paginacion_url";
+    require_once 'Paginacion/paginacion.php';
     // Fin Paginacion
+
+    $readDataBase = new CrudTienda();
+    $readDataBase->setTableName($table_name);
+    $datos = $readDataBase->ReadData($inicio,$postPorPagina);
