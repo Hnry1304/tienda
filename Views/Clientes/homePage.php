@@ -22,7 +22,7 @@
         <?php endforeach ?>
 
         <div class="clear_fix"></div>
-        <?php require_once 'Views/Paginacion/Clientes/vistaPaginacion.php' ?>
+        <?php require_once 'Views/Paginacion/vistaPaginacion.php' ?>
 
     </article>
 </section>
