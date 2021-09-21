@@ -13,7 +13,7 @@
 
         $url = 'Views/Clientes/homePage.php';
 
-        $_SESSION['postPorPagina'] = 4;
+        $_SESSION['postPorPagina'] = 10;
     }
 
     // Inicio Paginacion

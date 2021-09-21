@@ -1,4 +1,4 @@
-@media (max-width: 525px) {
+/* @media (max-width: 525px) {
     .homePage .productos{
 
         height: 550px;
@@ -37,5 +37,45 @@
     .productos .product{
         width: 24%;
 
+    }
+} */
+
+
+@media (min-width: 380px){
+
+    .productos .product{
+        width: 48%;
+    }
+}
+
+
+@media (min-width: 500px){
+
+    .productos .product{
+        width: 32%;
+    }
+}
+
+@media (min-width: 750px){
+
+    .productos .product{
+        width: 24%;
+    }
+
+    
+
+}
+
+@media (min-width: 950px){
+
+    .productos .product{
+        width: 19%;
+    }
+}
+
+@media (min-width: 380px){
+
+    .container{
+        margin: 10px auto;
     }
 }

@@ -6,7 +6,6 @@
     </article>
 
     <article class="productos">
-        <h1>Productos</h1>
 
         <?php foreach($datos as $datos):?>
             <div class="product">
@@ -21,7 +20,6 @@
             </div>
         <?php endforeach ?>
 
-        <div class="clear_fix"></div>
         <?php require_once 'Views/Paginacion/vistaPaginacion.php' ?>
 
     </article>
