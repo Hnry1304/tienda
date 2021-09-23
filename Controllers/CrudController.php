@@ -66,4 +66,11 @@
                 header("Location: index.php?class=ViewTienda&function=viewProducts&product=$table_name");
             }
         }
+
+        public function buyProduct(){
+
+            require_once 'Validations/validateBuy.php';
+
+            header("Location: index.php?class=ViewTienda&function=viewCompra&id=$id");
+        }
     }

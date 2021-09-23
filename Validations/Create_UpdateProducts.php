@@ -26,8 +26,8 @@
         }
     }
 
-    $talla = filter_var($talla, FILTER_SANITIZE_STRING);
-    $precio = filter_var($precio, FILTER_SANITIZE_STRING);
+    $talla = filter_var($talla, FILTER_SANITIZE_NUMBER_INT);
+    $precio = filter_var($precio, FILTER_SANITIZE_NUMBER_INT);
     $imagen = filter_var($imagen, FILTER_SANITIZE_STRING);
     $color_producto = filter_var($color_producto, FILTER_SANITIZE_STRING);
 

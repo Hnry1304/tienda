@@ -1,0 +1,64 @@
+.content{
+    background-color: rgb(78, 131, 131);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content .photo{
+    width: 280px;
+    height: 300px;
+    background-color: rgb(134, 120, 103);
+    text-align: center;
+}
+
+.content .photos{
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    flex: 50px;
+}
+
+.content .photos a{
+    display: block;
+    background-color: coral;
+    text-align: center;
+    text-decoration: none;
+    padding: 28px 0;
+}
+
+.precio{
+    flex: 100%;
+    background-color: cornflowerblue;
+    padding: 3px;
+}
+
+.features{
+    background-color: crimson;
+    flex: 100%;
+}
+
+.cantidad{
+    flex: 100%;
+    flex-wrap: wrap;
+    background-color: rgb(10, 58, 58);
+}
+
+.cantidad ul{
+    list-style: none;
+}
+
+.cantidad ul li{
+    flex-direction: row;
+}
+
+.buyProduct{
+    width: 100%;
+    background-color: darkgoldenrod;
+    padding: 5px;
+    text-align: center;
+}
+
+.buyProduct a{
+    display: block;
+    text-decoration: none;
+}

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="Views/Assets/Css/Cliente/homePage.css">
     <link rel="stylesheet" href="Views/Assets/Css/Cliente/paginations.css">
     <link rel="stylesheet" href="Views/Assets/Css/Cliente/mediaQuery.css">
+    <link rel="stylesheet" href="Views/Assets/Css/Cliente/productInformation.css">
 </head>
 <body>
     <div class="container">

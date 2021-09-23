@@ -49,4 +49,12 @@
             $_SESSION['id'] = $id;
             require_once('Views/Tienda/viewCreate_UpdateProduct.php');
         }
+
+        public function viewProductInformation(){
+            require_once 'Views/Clientes/productInformation.php';
+        }
+
+        public function viewCompra(){
+            require_once 'Views/Clientes/payProduct.php';
+        }
     }
