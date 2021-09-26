@@ -14,8 +14,8 @@
                 </div>
                 <p>Precio: $<?= $datos['PRECIO']?>.00</p>
                 <div class="option">
-                    <a href="?class=ViewTienda&function=viewProductInformation&id=<?= $datos['ID'] ?>">View</a>
-                    <a href="?class=ViewTienda&function=viewCompra&id=<?= $datos['ID'] ?>">Buy</a>
+                    <a href="/tienda/ViewTienda/viewProductInformation/<?= $datos['ID'] ?>&id=<?= $datos['ID']?>">View</a>
+                    <a href="/tienda/ViewTienda/viewCompra/<?= $datos['ID'] ?>&id=<?= $datos['ID'] ?>">Buy</a>
                 </div>
             </div>
         <?php endforeach ?>

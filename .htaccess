@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    #activar rewrite
+
+    RewriteEngine on
+
+
+    RewriteCond %{SCRIPT_FILENAME} !-d
+    RewriteCond %{SCRIPT_FILENAME} !-f
+
+
+    RewriteRule ^(.*)/(.*)/(.*) index.php?class=$1&function=$2&product=$3
+</IfModule>

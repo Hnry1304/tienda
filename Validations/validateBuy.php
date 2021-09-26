@@ -2,12 +2,12 @@
     $id = $_GET['id'];
     $nombre = $_POST['nombre'];
     $telefono = $_POST['telefono'];
-
+    
     $nombre = trim($nombre);
     $telefono = trim($telefono);
 
     if(empty($nombre) || empty($telefono)){
-        header("Location: index.php?class=ViewTienda&function=viewCompra&id=$id");
+        header("Location: /tienda/ViewTienda/viewCompra/$id&id=$id");
     }
 
     $nombre = filter_var($nombre, FILTER_SANITIZE_STRING);

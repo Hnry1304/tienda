@@ -69,8 +69,9 @@
 
         public function buyProduct(){
 
+
             require_once 'Validations/validateBuy.php';
 
-            header("Location: index.php?class=ViewTienda&function=viewCompra&id=$id");
+            header("Location: /tienda/ViewTienda/viewCompra/$id&id=$id");
         }
     }

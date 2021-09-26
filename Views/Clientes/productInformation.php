@@ -45,7 +45,7 @@
     </div>
 
     <div class="buyProduct">
-        <a href="?class=ViewTienda&function=viewCompra&id=<?= $_GET['id']?>">Buy</a>
+        <a href="/tienda/ViewTienda/viewCompra/<?= $_GET['id']?>&id=<?= $_GET['id'] ?>">Buy</a>
     </div>
 
 </section>
