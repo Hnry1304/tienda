@@ -10,7 +10,11 @@
         <?php foreach($datos as $datos):?>
             <div class="product">
                 <div class="photo">
-                    <?= $datos['IMAGEN']?>
+                    <a href="/tienda/ViewTienda/viewProductInformation/<?= $datos['ID'] ?>&id=<?= $datos['ID']?>">
+                        <img src="/tienda/imagenes/<?php echo $datos['IMAGEN']?>" alt="">
+
+                    </a>
+
                 </div>
                 <p>Precio: $<?= $datos['PRECIO']?>.00</p>
                 <div class="option">

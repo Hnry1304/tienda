@@ -6,7 +6,9 @@
     </div>
     
     <div class="photos">
-        <a href="#">1</a>
+        <a href="#">
+            <img src="imagenes/1.jpg" alt="">
+        </a>
         <a href="#">2</a>
         <a href="#">3</a>
         <a href="#">4</a>
