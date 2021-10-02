@@ -5,7 +5,7 @@
         <span class="text">
 
         </span>
-        <form action="/tienda/Crud/buyProduct/<?=$_GET['id']?>" method="post">
+        <form action="/tienda/Crud/buyProduct/<?=$_GET['id']?>&id=<?=$_GET['id'] ?>" method="post">
             <label for="Name">
                 Nombre Cliente:
 
