@@ -14,6 +14,11 @@
 
             require_once 'Validations/Create_UpdateProducts.php';
 
+            $carpeta_destino = 'imagenes/';
+            $archivo_subido = $carpeta_destino . $_FILES['imagen']['name'];
+            move_uploaded_file($_FILES['imagen']['tmp_name'], $archivo_subido);
+
+
             $table_name = $_SESSION['product'];
 
             $createProduct = new CrudTienda();

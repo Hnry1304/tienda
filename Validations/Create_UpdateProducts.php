@@ -4,7 +4,7 @@
 
     $talla = $_POST['talla'];
     $precio = $_POST['precio'];
-    $imagen = $_POST['imagen'];
+    $imagen = $_FILES['imagen']['name'];
     $color_producto = $_POST['color_producto'];
     
     $talla = trim($talla);
@@ -28,11 +28,11 @@
 
     $talla = filter_var($talla, FILTER_SANITIZE_NUMBER_INT);
     $precio = filter_var($precio, FILTER_SANITIZE_NUMBER_INT);
-    $imagen = filter_var($imagen, FILTER_SANITIZE_STRING);
+    // $imagen = filter_var($imagen, FILTER_SANITIZE_STRING);
     $color_producto = filter_var($color_producto, FILTER_SANITIZE_STRING);
 
     //Quitar Numeros y caraceteres especiales en el campo nombre y apellidos
     $talla = preg_replace('([^0-9])', '', $talla);
     $precio = preg_replace('([^0-9])','', $precio);
-    $imagen = preg_replace('([^A-Za-z])','', $imagen);
+    // $imagen = preg_replace('([^A-Za-z])','', $imagen);
     $color_producto = preg_replace('([^A-Za-z])', '', $color_producto);

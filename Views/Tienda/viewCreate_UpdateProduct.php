@@ -12,7 +12,7 @@
     <?php if($_GET['function'] == 'viewUpdateProduct' ? $option = "UpdateProduct" :$option = "CreateProduct")?>
 
 
-    <form action="?class=Crud&function=<?=$option?>" method="post">
+    <form action="?class=Crud&function=<?=$option?>" method="post" enctype="multipart/form-data">
         <label for="talla">
             Talla:
             <input type="text" name="talla" >
@@ -26,9 +26,10 @@
 
         <label for="imagen">
             Imagen:
-            <input type="text" name="imagen" >
+            <input type="file" name="imagen" >
         </label>
-
+        <br>
+        
         <label for="Color_Producto">
             Color Producto:
             <input type="text" name="color_producto">
